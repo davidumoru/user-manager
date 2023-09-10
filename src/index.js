@@ -11,6 +11,8 @@ app.use(bodyParser.json());
 // connecting to db here
 connectDB(process.env.MONGO_URI);
 
+app.use("/api", require("./controllers/user.controllers"));
+
 // Defining a route for the root URL ("/")
 app.get("/", (req, res) => {
   res.status(200).json({

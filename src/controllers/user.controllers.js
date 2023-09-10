@@ -27,16 +27,6 @@ router.post(
   }
 );
 
-// Get all users
-router.get("/", async (req, res) => {
-  try {
-    const users = await User.find();
-    res.json(users);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
 // Get a specific user by ID
 router.get(
   "/read-user:id",

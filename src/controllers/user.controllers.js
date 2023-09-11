@@ -6,7 +6,7 @@ const User = require("../models/user.models");
 
 // Create a new user
 router.post(
-  "/create-user",
+  "/",
   [
     body("fullName").notEmpty().withMessage("Full name is required"),
     body("track").notEmpty().withMessage("Track is required"),
@@ -29,7 +29,7 @@ router.post(
 
 // Get a specific user by ID
 router.get(
-  "/read-user:id",
+  "/:id",
   [param("id").isMongoId().withMessage("Invalid user ID")],
   async (req, res) => {
     const errors = validationResult(req);
@@ -51,7 +51,7 @@ router.get(
 
 // Update a user by ID
 router.put(
-  "/update-user:id",
+  "/:id",
   [
     param("id").isMongoId().withMessage("Invalid user ID"),
     body("fullName").notEmpty().withMessage("Full name is required"),
@@ -79,7 +79,7 @@ router.put(
 
 // Delete a user by ID
 router.delete(
-  "/delete-user:id",
+  "/:id",
   [param("id").isMongoId().withMessage("Invalid user ID")],
   async (req, res) => {
     const errors = validationResult(req);

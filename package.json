@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node tests/runTests.js",
+    "test:local": "newman run tests/user-manager-local.postman_collection.json",
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
     "build": "echo 'Starting build process...' && npm install"

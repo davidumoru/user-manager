@@ -18,7 +18,8 @@ To test my already deployed API, use the command `npm run test`
 
 ## Limitations/ Assumptions made during development
 
-The API assumes that security measures such as authentication and authorization are handled externally or in a separate layer. It does not provide built-in security features beyond basic data validation.
+- The API assumes that security measures such as authentication and authorization are handled externally or in a separate layer. It does not provide built-in security features beyond basic data validation.
+- The task mentioned adding or retrieving a person by name, but typically, I would use the generated ID.
 
 ## API Endpoints
 

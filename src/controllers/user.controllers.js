@@ -27,18 +27,13 @@ router.post(
   }
 );
 
-// Get a specific user by ID
+// Get a specific user by name
 router.get(
-  "/:id",
-  [param("id").isMongoId().withMessage("Invalid user ID")],
+  "/:name",
   async (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
-
     try {
-      const user = await User.findById(req.params.id);
+      const name = req.params.name;
+      const user = await User.findOne({ fullName: name });
       if (!user) {
         return res.status(404).json({ message: "User not found" });
       }
@@ -49,11 +44,10 @@ router.get(
   }
 );
 
-// Update a user by ID
+// Update a user by name
 router.put(
-  "/:id",
+  "/:name",
   [
-    param("id").isMongoId().withMessage("Invalid user ID"),
     body("fullName").notEmpty().withMessage("Full name is required"),
     body("track").notEmpty().withMessage("Track is required"),
   ],
@@ -64,32 +58,32 @@ router.put(
     }
 
     try {
-      const user = await User.findByIdAndUpdate(req.params.id, req.body, {
-        new: true,
-      });
-      if (!user) {
+      const name = req.params.name;
+      const updatedUser = await User.findOneAndUpdate(
+        { fullName: name },
+        req.body,
+        {
+          new: true,
+        }
+      );
+      if (!updatedUser) {
         return res.status(404).json({ message: "User not found" });
       }
-      res.json(user);
+      res.json(updatedUser);
     } catch (error) {
       res.status(500).json({ error: error.message });
     }
   }
 );
 
-// Delete a user by ID
+// Delete a user by name
 router.delete(
-  "/:id",
-  [param("id").isMongoId().withMessage("Invalid user ID")],
+  "/:name",
   async (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
-
     try {
-      const user = await User.findByIdAndRemove(req.params.id);
-      if (!user) {
+      const name = req.params.name;
+      const deletedUser = await User.findOneAndRemove({ fullName: name });
+      if (!deletedUser) {
         return res.status(404).json({ message: "User not found" });
       }
       res.json({ message: "User deleted" });

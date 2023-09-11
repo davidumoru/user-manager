@@ -130,7 +130,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://user-manager-8ybn.onrender.com/api/api/Updated%20Name",
+					"raw": "https://user-manager-8ybn.onrender.com/api/Updated%20Name",
 					"protocol": "https",
 					"host": [
 						"user-manager-8ybn",
@@ -138,7 +138,6 @@
 						"com"
 					],
 					"path": [
-						"api",
 						"api",
 						"Updated%20Name"
 					]

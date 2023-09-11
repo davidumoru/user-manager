@@ -1,10 +1,20 @@
+[DEPLOYED API](https://user-manager-8ybn.onrender.com)
+
 ## Setup/ Installation
 
 The setup or installation process can be found in the project [README](https://github.com/davidumoru/user-manager#readme)
 
 ## Testing
 
-To run automated tests on this project, use the command `npm test`.
+To run automated tests on this project:
+
+### Local Test
+To test locally;
+Ensure all dependecies are installed, express server is running and db is connected successfully.
+Then use the command `npm run test:local` to run.
+
+### Deployed Test
+To test my already deployed API, use the command `npm run test`
 
 ## Limitations/ Assumptions made during development
 

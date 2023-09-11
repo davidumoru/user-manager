@@ -14,6 +14,11 @@ To install and set up the project, follow these steps:
 2. Navigate to the project directory `cd user-manager`
 3. Run `npm install` to install the project dependencies.
 
+### Environment Variables
+1. Rename `.env.example` to `.env`
+2. Fill in the values for your settings in the .env file.
+3. Save the .env file.
+
 ## Usage
 
 To start the project, run the following command:

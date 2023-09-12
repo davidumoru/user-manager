@@ -49,7 +49,7 @@
 			"response": []
 		},
 		{
-			"name": "Get User by ID",
+			"name": "Get User by Name",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -95,7 +95,7 @@
 			"response": []
 		},
 		{
-			"name": "Update User by ID",
+			"name": "Update User by Name",
 			"request": {
 				"method": "PUT",
 				"header": [],
@@ -125,7 +125,7 @@
 			"response": []
 		},
 		{
-			"name": "Delete User by ID",
+			"name": "Delete User by Name",
 			"request": {
 				"method": "DELETE",
 				"header": [],

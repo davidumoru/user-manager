@@ -37,12 +37,14 @@ The project includes the following endpoints:
 
 **Response:**
 ```
-statusCode: 201
-
 {
-  "fullName": "John Doe",
-  "track": "frontend",
-  "_id": "user_id"
+    "message": "User created successfully",
+    "user": {
+        "fullName": "John Doe",
+        "track": "backend",
+        "_id": "user_id",
+        "__v": 0
+    }
 }
 ```
 
@@ -51,9 +53,13 @@ statusCode: 201
 **Response:**
 ```
 {
-    "_id": "user_id",
-    "fullName": "John Doe",
-    "track": "frontend"
+    "message": "User retrieved successfully",
+    "user": {
+        "_id": "user_id",
+        "fullName": "John Doe",
+        "track": "backend",
+        "__v": 0
+    }
 }
 ```
 
@@ -62,9 +68,13 @@ statusCode: 201
 **Response:**
 ```
 {
-    "_id": "user_id",
-    "fullName": "Updated Name",
-    "track": "Updated Track"
+    "message": "User updated successfully",
+    "user": {
+        "_id": "user_id",
+        "fullName": "Updated Name",
+        "track": "Updated Track",
+        "__v": 0
+    }
 }
 ```
 
